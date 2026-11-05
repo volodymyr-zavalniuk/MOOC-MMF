@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Science MOOC</title>
+<!-- MathJax renders LaTeX. For offline hosting, download MathJax and point this src to the local copy. -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
+  options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="engine/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div>
+      <div class="brand" id="brand"></div>
+      <div class="course-label" id="sideCourseName"></div>
+    </div>
+    <div class="progress-wrap">
+      <div style="display:flex;justify-content:space-between;font-size:.8rem">
+        <span>Course progress</span><strong id="sideProgressText">0%</strong>
+      </div>
+      <div class="progress-line"><div class="progress-fill" id="sideProgress"></div></div>
+    </div>
+    <nav class="nav" id="navigation" aria-label="Course navigation"></nav>
+    <div class="side-foot">Your progress is stored in this browser. No account is required.</div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="crumb" id="breadcrumb"></div>
+      <div class="score-pill" id="scorePill">Score: —</div>
+    </div>
+    <div class="content" id="view" aria-live="polite"></div>
+  </main>
+</div>
+
+<!-- Classic scripts (not ES modules) so the course also works when index.html is opened from disk. Order matters. -->
+<script src="course/course.js"></script>
+<script src="engine/model.js"></script>
+<script src="engine/storage.js"></script>
+<script src="engine/progress.js"></script>
+<script src="engine/rendering.js"></script>
+<script src="engine/quiz.js"></script>
+<script src="engine/navigation.js"></script>
+</body>
+</html>
