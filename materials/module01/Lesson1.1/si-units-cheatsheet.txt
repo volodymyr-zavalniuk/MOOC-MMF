@@ -1,1 +1,0 @@
-SI base units: metre (m), kilogram (kg), second (s), ampere (A), kelvin (K), mole (mol), candela (cd).
