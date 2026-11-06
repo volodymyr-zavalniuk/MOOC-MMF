@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Science MOOC</title>
+<link rel="stylesheet" href="engine/styles.css">
+<script src="engine/mathjax-loader.js"></script>
+</head>
+<body>
+<div id="backdrop" class="backdrop" hidden></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div>
+      <div class="brand" id="brand"></div>
+      <div class="course-label" id="sideCourseName"></div>
+    </div>
+    <div class="progress-wrap">
+      <div style="display:flex;justify-content:space-between;font-size:.8rem">
+        <span data-i18n="side.progress"></span><strong id="sideProgressText">0%</strong>
+      </div>
+      <div class="progress-line"><div class="progress-fill" id="sideProgress"></div></div>
+    </div>
+    <nav class="nav" id="navigation" data-i18n-aria="nav.aria"></nav>
+    <div class="side-foot" data-i18n="side.foot"></div>
+  </aside>
+  <main class="main">
+    <div class="topbar">
+      <div class="top-left">
+        <button class="icon-btn" id="navToggle" data-i18n-aria="nav.toggle" data-i18n-title="nav.toggle" aria-controls="sidebar" aria-expanded="true">☰</button>
+        <nav class="crumb" id="breadcrumb"></nav>
+      </div>
+      <div class="top-right">
+        <form id="searchForm" role="search"><input type="search" id="searchInput" data-i18n-placeholder="top.search" data-i18n-aria="top.search"></form>
+        <button class="icon-btn" id="settingsBtn" data-i18n-aria="top.settings" data-i18n-title="top.settings" aria-expanded="false">⚙</button>
+        <div class="score-pill" id="scorePill"></div>
+      </div>
+      <div class="settings" id="settingsPanel" hidden></div>
+    </div>
+    <div id="banners"></div>
+    <div class="content" id="view" aria-live="polite"></div>
+  </main>
+</div>
+
+<!-- Classic scripts (not ES modules) so the course also works when opened from disk. Order matters; navigation.js must be last. -->
+<script src="engine/strings.js"></script>
+<script src="course/course.js"></script>
+<script src="engine/model.js"></script>
+<script src="engine/storage.js"></script>
+<script src="engine/prefs.js"></script>
+<script src="engine/progress.js"></script>
+<script src="engine/rendering.js"></script>
+<script src="engine/quiz.js"></script>
+<script src="engine/plot.js"></script>
+<script src="engine/search.js"></script>
+<script src="engine/export.js"></script>
+<script src="engine/settings.js"></script>
+<script src="engine/navigation.js"></script>
+</body>
+</html>
